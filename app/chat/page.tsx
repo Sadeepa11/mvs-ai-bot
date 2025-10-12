@@ -159,7 +159,7 @@ const ChatPage = () => {
               </div>
             )}
             {messages.map((msg, idx) => (
-              <MessageBubble key={idx} sender={msg.sender} text={msg.text} timestamp={msg.timestamp} />
+              <MessageBubble key={idx} sender={msg.sender} text={msg.text}  />
             ))}
             {loading && <MessageBubble sender="ai" text="Thinking..." />}
             <div ref={endRef} />
