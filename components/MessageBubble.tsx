@@ -6,7 +6,7 @@ import { FaUser, FaRobot } from "react-icons/fa";
 type Props = {
   sender: "user" | "ai";
   text: string;
-  timestamp: string | number | Date; // message timestamp
+  // message timestamp
 };
 
 const MessageBubble = ({ sender, text, timestamp }: Props) => {
