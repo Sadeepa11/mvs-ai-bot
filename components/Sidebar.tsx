@@ -14,6 +14,14 @@ const Sidebar = () => {
       {/* Header */}
       <div className="p-4 border-b border-gray-700/50">
         <div className="flex items-center gap-3 mb-4">
+
+           <div className="w-15 h-15 flex-shrink-0 rou">
+    <img
+      src={logo.src}
+      alt="MVS AI Logo"
+      className="w-full h-full object-contain rounded-full"
+    />
+  </div>
         
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
