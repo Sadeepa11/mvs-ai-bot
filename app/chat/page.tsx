@@ -159,44 +159,41 @@ const ChatPage = () => {
               </div>
             )}
             {messages.map((msg, idx) => (
-              <MessageBubble key={idx} sender={msg.sender} text={msg.text}  />
+              <MessageBubble key={idx} sender={msg.sender} text={msg.text} timestamp={msg.timestamp} />
             ))}
             {loading && <MessageBubble sender="ai" text="Thinking..." />}
             <div ref={endRef} />
           </div>
         </div>
-
-        {/* Input Area - Fixed at Bottom */}
-        <div className="fixed bottom-0 left-0 right-0 md:left-64 p-4 md:px-8 bg-gradient-to-t from-gray-900 via-gray-900/95 to-transparent backdrop-blur-sm">
-          <div className="max-w-5xl mx-auto">
-            <div className="rounded-3xl px-4 py-3 bg-gradient-to-r from-gray-800/90 via-gray-700/90 to-gray-800/90 backdrop-blur-xl border border-gray-600/50 shadow-2xl shadow-black/50 hover:border-blue-500/50 transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <button className="p-2 hover:bg-white/10 rounded-xl transition-all duration-200 active:scale-90 flex-shrink-0">
-                  <IoAdd size={24} className="text-gray-300 hover:text-white transition-colors" />
-                </button>
-                <input
-                  type="text"
-                  placeholder="Ask anything..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                  className="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base py-2"
-                />
-                <button
-                  onClick={sendMessage}
-                  disabled={loading}
-                  className="flex text-white items-center justify-center gap-2 px-5 md:px-6 py-2.5 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-lg shadow-blue-500/30 font-medium flex-shrink-0"
-                >
-                  <IoSend size={18} />
-                  <span className="text-sm hidden sm:inline">Send</span>
-                </button>
-              </div>
-            </div>
-            <p className="text-center text-xs text-gray-500 mt-3">
-              AI can make mistakes. Consider checking important information.
-            </p>
-          </div>
-        </div>
+{/* Input Area - Fixed at Bottom */}
+<div className="fixed bottom-0 left-0 right-0 md:left-64 p-4 md:px-8 bg-gradient-to-t from-gray-900 via-gray-900/95 to-transparent backdrop-blur-sm">
+  <div className="max-w-5xl mx-auto">
+    <div className="rounded-3xl px-4 py-3 bg-gradient-to-r from-gray-800/90 via-gray-700/90 to-gray-800/90 backdrop-blur-xl border border-gray-600/50 shadow-2xl shadow-black/50 hover:border-blue-500/50 transition-all duration-300 flex items-center gap-3">
+      <button className="p-2 hover:bg-white/10 rounded-xl transition-all duration-200 active:scale-90 flex-shrink-0">
+        <IoAdd size={24} className="text-gray-300 hover:text-white transition-colors" />
+      </button>
+      <input
+        type="text"
+        placeholder="Ask anything..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+        className="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base py-2 min-w-0"
+      />
+      <button
+        onClick={sendMessage}
+        disabled={loading}
+        className="flex text-white items-center justify-center gap-2 px-5 md:px-6 py-2.5 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-lg shadow-blue-500/30 font-medium flex-shrink-0"
+      >
+        <IoSend size={18} />
+        <span className="text-sm hidden sm:inline">Send</span>
+      </button>
+    </div>
+    <p className="text-center text-xs text-gray-500 mt-3">
+      AI can make mistakes. Consider checking important information.
+    </p>
+  </div>
+</div>
       </div>
 
       <style jsx>{`
