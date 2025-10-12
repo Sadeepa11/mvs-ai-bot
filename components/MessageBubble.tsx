@@ -9,7 +9,7 @@ type Props = {
   // message timestamp
 };
 
-const MessageBubble = ({ sender, text, timestamp }: Props) => {
+const MessageBubble = ({ sender, text }: Props) => {
   const codeRegex = /```(\w+)?\n([\s\S]*?)```/g;
 
   const parts: { type: "text" | "code"; content: string; language?: string }[] = [];
