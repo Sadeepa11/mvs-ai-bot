@@ -59,7 +59,8 @@ const ChatPage = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
+           Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENROUTER_API_KEY}`,
+
             "Content-Type": "application/json",
           },
         }
